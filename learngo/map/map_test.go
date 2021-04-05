@@ -37,3 +37,32 @@ func TestNotExistingKey(t *testing.T) {
    }
 
 }
+
+func TestMapFeature(t *testing.T) {
+   m := map[int]func(op int)int{}
+
+   m[1] = func(op int) int {return op}
+   m[2] = func(op int) int {return op * op}
+   m[3] = func(op int) int {return op * op * op}
+
+   t.Log(m[2](2))
+
+}
+
+func TestMapForSet(t *testing.T) {
+    set := map[int]bool{}
+
+    set[1] = true
+
+    if set[2] {
+       t.Log("存在")
+    } else {
+       t.Log("不存在")
+    }
+
+    delete(set, 1)
+
+    t.Log(set)
+
+}
+
