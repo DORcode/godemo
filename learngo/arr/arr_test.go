@@ -38,3 +38,44 @@ func TestBitClear(t *testing.T) {
 
 
 }
+
+func TestArrInit(t *testing.T) {
+    var arr [3]int
+    arr[0] = 1
+    t.Log(arr)
+
+    var arr2 [5]string
+    arr2[0] = "a" 
+
+    t.Log(arr2)
+
+
+    arr3 := [3]int{1, 2, 3}
+    t.Log(arr3)
+
+    arr4 := [...]string{"a", "b", "c", "d", "e"}
+    t.Log(arr4)
+}
+
+func TestArrLoop(t *testing.T) {
+   arr := [...]int{1,2,3,4,5,6,7}
+   for i:=0;i<len(arr);i++ {
+      t.Log(arr[i])
+   }
+
+   for i,v := range arr {
+      t.Log(i,v)
+   }
+}
+
+func TestArrSlice(t *testing.T) {
+   arr := [...]string{"a", "b", "c", "d", "e", "f"}
+   t.Log(arr)
+   
+   a := arr[:3]
+
+   t.Log(a)
+   b := arr[2:]
+   t.Log(b)
+   t.Log(arr[0:len(arr)])
+}
