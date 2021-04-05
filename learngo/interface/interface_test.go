@@ -2,6 +2,7 @@ package interface_test
 
 import (
    "testing"
+   "fmt"
  )
 
 
@@ -24,4 +25,22 @@ import (
 
     t.Log(g.WriteHello())
  
+ }
+
+
+ func DoSomething(p interface{}) {
+    if i, ok := p.(int); ok {
+       fmt.Println("Int", i)
+       return
+    } 
+
+    if s, ok := p.(string); ok {
+       fmt.Println("str", s)
+       return
+    }
+ }
+
+ func TestEmptyInterface(t *testing.T) {
+    DoSomething(1)
+    DoSomething("1")
  }

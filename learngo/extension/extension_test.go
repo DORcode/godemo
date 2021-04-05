@@ -41,4 +41,6 @@ func TestDog(t *testing.T) {
    cat := new(Cat)
 
    cat.SpeakTo("He")
+
+
 }
